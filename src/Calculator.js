@@ -1,5 +1,4 @@
-function add(x,y){
-    function parseArg(n) {
+function parseArg(n) {
         if(Array.isArray(n)){
             var result = 0;
             for(var i=0;i<n.length;i++)
@@ -9,7 +8,10 @@ function add(x,y){
         }
         if (typeof n === "function") return parseArg(n());
         return isNaN(n) ? 0 : parseInt(n,10);
-    }
+}
+
+function add(x,y){
+    
     var result = 0;
     for(var i=0;i<arguments.length;i++)
         result += parseArg(arguments[i]);
